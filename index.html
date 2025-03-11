@@ -1,24 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grading System</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
-    <div>
-        <h1>Simple Grading System</h1>
-        <!-- <p>Enter your score (0 - 100):</p> -->
-        <input type="number" id="score-input" placeholder="Enter your score">
-        <br>
-        <button onclick="checkGrade()">Submit</button>
-        <p id="grade-output"></p>
-    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Grading System</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#grading">Grade Checker</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to the Grading System</h1>
+            <p>Check your grades effortlessly and get instant results.</p>
+            <a href="#grading" class="cta-button">Check Your Grade</a>
+        </div>
+    </section>
+
+    <!-- Grading System Logic & Input Section -->
+    <section id="grading" class="grading">
+        <h2>Grade Checker</h2>
+        <div class="input-container">
+            <input type="number" id="score-input" placeholder="Enter your score (0-100)">
+            <button onclick="checkGrade()">Submit</button>
+        </div>
+        <p id="grade-output" class="grade-output"></p
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <i class="fas fa-pencil-alt"></i>
+                <h3>Enter Your Score</h3>
+                <p>Input your score in the provided field.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-calculator"></i>
+                <h3>Calculate Grade</h3>
+                <p>Our system calculates your grade instantly.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-chart-line"></i>
+                <h3>View Results</h3>
+                <p>Get your grade with performance insights.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="carousel">
+            <div class="testimonial active">
+                <p>"This grading system is a lifesaver! So easy to use."</p>
+                <span>- John Doe</span>
+            </div>
+            <div class="testimonial">
+                <p>"Accurate and fast results. Highly recommended!"</p>
+                <span>- Jane Smith</span>
+            </div>
+            <div class="testimonial">
+                <p>"The best grading tool I've ever used."</p>
+                <span>- Mike Johnson</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="quick-links">
+            <a href="#hero">Home</a>
+            <a href="#grading">Grade Checker</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <p>&copy; 2023 Grading System. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>

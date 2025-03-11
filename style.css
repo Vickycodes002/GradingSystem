@@ -1,74 +1,327 @@
+/* General Styles */
 body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to right, #6a11cb, #fff);
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #fff;
-}
-
-.container {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    width: 90%;
+    box-sizing: border-box;
+    background-color: #f4f4f9;
     color: #333;
 }
 
-h1 {
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #2c3e50;
     color: #fff;
-    font-size: 2rem;
-    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 24px;
     font-weight: bold;
 }
 
-p {
-    color: #555;
-    font-size: 1rem;
-    margin: 10px 0;
+.nav-links {
+    list-style: none;
+    display: flex;
 }
 
-input {
-    padding: 12px;
-    font-size: 16px;
-    width: calc(100% - 24px);
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-sizing: border-box;
-    outline: none;
-    transition: border-color 0.3s;
+.nav-links li {
+    margin-left: 20px;
 }
 
-input:focus {
-    border-color: #2575fc;
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-button {
-    padding: 12px 25px;
-    font-size: 16px;
+.nav-links a:hover {
+    color: #1abc9c;
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
     cursor: pointer;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    color: white;
+}
+
+/* Hero Section */
+.hero {
+    background: url(./media/Artboard\ 1.jpg) no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    padding: 10px 20px;
+    background-color: #1abc9c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #16a085;
+}
+
+/* Grading Section */
+.grading {
+    padding: 50px 10%;
+    text-align: center;
+}
+
+.input-container {
+    margin: 20px 0;
+}
+
+.input-container input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-container button {
+    padding: 10px 20px;
+    background-color: #1abc9c;
+    color: #fff;
     border: none;
-    border-radius: 8px;
-    transition: transform 0.3s, background 0.3s;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-button:hover {
-    transform: scale(1.05);
-    background: linear-gradient(to right, #2575fc, #6a11cb);
+.input-container button:hover {
+    background-color: #16a085;
 }
 
-#grade-output {
+.grade-output {
+    font-size: 20px;
     margin-top: 20px;
-    font-size: 1.2rem;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 50px 10%;
+    text-align: center;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.step {
+    width: 30%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.step i {
+    font-size: 40px;
+    color: #1abc9c;
+    margin-bottom: 15px;
+}
+
+.step h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 50px 10%;
+    text-align: center;
+    background-color: #fff;
+}
+
+.carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.testimonial {
+    display: none;
+    padding: 20px;
+    background-color: #f4f4f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial.active {
+    display: block;
+    animation: fadeIn 1s;
+}
+
+.testimonial p {
+    font-size: 18px;
+    font-style: italic;
+    color: #333;
+}
+
+.testimonial span {
+    display: block;
+    margin-top: 10px;
     font-weight: bold;
-    color: #2575fc;
+    color: #1abc9c;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Contact Section */
+.contact {
+    padding: 50px 10%;
+    text-align: center;
+    background-color: #f4f4f9;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact input, .contact textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.contact button {
+    padding: 10px 20px;
+    background-color: #1abc9c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact button:hover {
+    background-color: #16a085;
+}
+
+/* Footer */
+.footer {
+    padding: 20px 10%;
+    text-align: center;
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+.social-links {
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #1abc9c;
+}
+
+.quick-links {
+    margin-bottom: 15px;
+}
+
+.quick-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.quick-links a:hover {
+    color: #1abc9c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #2c3e50;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .steps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
 }

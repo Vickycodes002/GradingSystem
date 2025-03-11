@@ -1,3 +1,12 @@
+// Navigation Hamburger Menu
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// Grading System Logic
 function checkGrade() {
     const scoreInput = document.getElementById("score-input");
     const gradeOutput = document.getElementById("grade-output");
@@ -29,3 +38,40 @@ function checkGrade() {
         gradeOutput.style.color = "green";
     }
 }
+
+// Testimonials Carousel
+let currentTestimonial = 0;
+const testimonials = document.querySelectorAll('.testimonial');
+
+function showTestimonial(index) {
+    testimonials.forEach((testimonial, i) => {
+        testimonial.classList.remove('active');
+        if (i === index) {
+            testimonial.classList.add('active');
+        }
+    });
+}
+
+function nextTestimonial() {
+    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+    showTestimonial(currentTestimonial);
+}
+
+setInterval(nextTestimonial, 5000); // Auto-rotate every 5 seconds
+
+// Contact Form Validation
+const contactForm = document.getElementById('contact-form');
+
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    if (name && email && message) {
+        alert('Thank you for your message!');
+        contactForm.reset();
+    } else {
+        alert('Please fill out all fields.');
+    }
+});
